@@ -570,7 +570,7 @@ footer .in{display:grid; gap:6px}
     root.setAttribute('data-lang', l); root.lang=l;
     document.querySelectorAll('[data-set-lang]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.setLang===l)); });
     try{ localStorage.setItem('ip-lang', l); }catch(e){}
-    if(push){ try{ location.hash=(l==='en')?'en':''; }catch(e){} }
+    if(push){ try{ history.replaceState(null,'', location.pathname + location.search + (l==='en' ? '#en' : '')); }catch(e){} }
     paintChart(); hideTip(); paintStats();
   }
   var start='ro';
