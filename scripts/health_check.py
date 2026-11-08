@@ -28,7 +28,7 @@ try:
     if age > 5: problems.append(f"Cifrele nu s-au mai actualizat de {age} zile")
 except Exception as e: problems.append(f"stats.json lipsă: {e}")
 # 4. linkurile externe (clipuri, canale, articole) funcționează
-links = sorted(set(re.findall(r'href="(https://[^"#]+)"', html)))
+links = sorted(u for u in set(re.findall(r'href="(https://[^"#]+)"', html)) if 'fonts.g' not in u)
 bad = []
 for u in links:
     try:
