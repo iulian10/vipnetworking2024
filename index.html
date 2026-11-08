@@ -186,6 +186,15 @@ textarea{min-height:120px; resize:vertical}
 .status{font-size:.95rem; font-weight:600}
 .status.ok{color:var(--ok)}
 .status.err{color:var(--accent)}
+.formwrap{min-width:0}
+form{background:var(--soft); border-radius:10px; padding:24px}
+.done{background:var(--soft); border-radius:10px; padding:32px 28px; display:grid; gap:14px; justify-items:start}
+.done-mark{width:48px; height:48px; border-radius:50%; background:var(--ok); position:relative}
+.done-mark::after{content:""; position:absolute; left:17px; top:12px; width:10px; height:20px; border-right:3px solid #fff; border-bottom:3px solid #fff; transform:rotate(45deg)}
+.done h3{font-family:var(--display); font-stretch:85%; font-size:1.6rem}
+.done p{color:var(--muted)}
+input:focus, select:focus, textarea:focus{border-color:var(--ink)}
+input[aria-invalid="true"], textarea[aria-invalid="true"]{border-color:var(--accent)}
 .foot{margin-top:72px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; display:grid; gap:6px}
 
 @media (max-width: 900px){
@@ -289,18 +298,18 @@ textarea{min-height:120px; resize:vertical}
   <section id="rezultate">
     <div class="step"><b>3</b><span lang="ro">Ce mă recomandă</span><span lang="en">What backs me up</span></div>
     <h2><span lang="ro">Rezultate publice, verificabile</span><span lang="en">Public, verifiable results</span></h2>
-    <p class="intro"><span lang="ro">Canalele mele sunt locul unde testez fiecare format înainte să-l produc pentru un client. Cifre publice din 7 noiembrie 2026.</span><span lang="en">My channels are where I test every format before producing it for a client. Public figures as of 7 November 2026.</span></p>
+    <p class="intro"><span lang="ro">Canalele mele sunt locul unde testez fiecare format înainte să-l produc pentru un client. Cifre publice actualizate automat, ultima dată pe <span data-k="updated" data-f="date">7 noiembrie 2026</span>.</span><span lang="en">My channels are where I test every format before producing it for a client. Public figures updated automatically, last on <span data-k="updated" data-f="date">7 November 2026</span>.</span></p>
     <div class="stats">
-      <div class="stat"><b><span lang="ro">40 mil.+</span><span lang="en">40M+</span></b><span><span lang="ro">vizualizări pe YouTube și TikTok</span><span lang="en">views on YouTube and TikTok</span></span></div>
-      <div class="stat"><b><span lang="ro">116.000+</span><span lang="en">116,000+</span></b><span><span lang="ro">urmăritori pe 4 platforme</span><span lang="en">followers on 4 platforms</span></span></div>
-      <div class="stat"><b><span lang="ro">2.993</span><span lang="en">2,993</span></b><span><span lang="ro">clipuri și postări publicate</span><span lang="en">videos and posts published</span></span></div>
+      <div class="stat"><b><span lang="ro"><span data-k="total_views" data-f="milplus">40 mil.+</span></span><span lang="en"><span data-k="total_views" data-f="milplus">40M+</span></span></b><span><span lang="ro">vizualizări pe YouTube și TikTok</span><span lang="en">views on YouTube and TikTok</span></span></div>
+      <div class="stat"><b><span lang="ro"><span data-k="total_followers" data-f="kplus">116.000+</span></span><span lang="en"><span data-k="total_followers" data-f="kplus">116,000+</span></span></b><span><span lang="ro">urmăritori pe 4 platforme</span><span lang="en">followers on 4 platforms</span></span></div>
+      <div class="stat"><b><span lang="ro"><span data-k="total_posts" data-f="int">2.993</span></span><span lang="en"><span data-k="total_posts" data-f="int">2,993</span></span></b><span><span lang="ro">clipuri și postări publicate</span><span lang="en">videos and posts published</span></span></div>
       <div class="stat"><b><span lang="ro">500+</span><span lang="en">500+</span></b><span><span lang="ro">producții pentru branduri și alte canale</span><span lang="en">productions for brands and other channels</span></span></div>
     </div>
     <div class="platforms">
-      <div class="pf"><h3>YouTube</h3><p><span lang="ro">47.400 abonați · 1.345 clipuri · 11,1 mil. vizualizări</span><span lang="en">47,400 subscribers · 1,345 videos · 11.1M views</span></p></div>
-      <div class="pf"><h3>TikTok</h3><p><span lang="ro">29.587 urmăritori · 984 clipuri · 29,1 mil. vizualizări</span><span lang="en">29,587 followers · 984 videos · 29.1M views</span></p></div>
-      <div class="pf"><h3>Facebook</h3><p><span lang="ro">21.091 urmăritori</span><span lang="en">21,091 followers</span></p></div>
-      <div class="pf"><h3>Instagram</h3><p><span lang="ro">18.000+ urmăritori · 664 postări</span><span lang="en">18,000+ followers · 664 posts</span></p></div>
+      <div class="pf"><h3>YouTube</h3><p><span lang="ro"><span data-k="yt_subs" data-f="int">47.400</span> abonați · <span data-k="yt_videos" data-f="int">1.345</span> clipuri · <span data-k="yt_views" data-f="mil1">11,1 mil.</span> vizualizări</span><span lang="en"><span data-k="yt_subs" data-f="int">47,400</span> subscribers · <span data-k="yt_videos" data-f="int">1,345</span> videos · <span data-k="yt_views" data-f="mil1">11.1M</span> views</span></p></div>
+      <div class="pf"><h3>TikTok</h3><p><span lang="ro"><span data-k="tt_followers" data-f="int">29.587</span> urmăritori · <span data-k="tt_videos" data-f="int">984</span> clipuri · <span data-k="tt_views" data-f="mil1">29,1 mil.</span> vizualizări</span><span lang="en"><span data-k="tt_followers" data-f="int">29,587</span> followers · <span data-k="tt_videos" data-f="int">984</span> videos · <span data-k="tt_views" data-f="mil1">29.1M</span> views</span></p></div>
+      <div class="pf"><h3>Facebook</h3><p><span lang="ro"><span data-k="fb_followers" data-f="int">21.091</span> urmăritori</span><span lang="en"><span data-k="fb_followers" data-f="int">21,091</span> followers</span></p></div>
+      <div class="pf"><h3>Instagram</h3><p><span lang="ro"><span data-k="ig_followers" data-f="kplus">18.000+</span> urmăritori · <span data-k="ig_posts" data-f="int">664</span> postări</span><span lang="en"><span data-k="ig_followers" data-f="kplus">18,000+</span> followers · <span data-k="ig_posts" data-f="int">664</span> posts</span></p></div>
     </div>
 
     <div class="subhead"><h3><span lang="ro">Clienți, emisiuni și parteneri</span><span lang="en">Clients, shows and partners</span></h3></div>
@@ -471,15 +480,15 @@ textarea{min-height:120px; resize:vertical}
           <div><button type="button" class="btn small" id="copy-mail"><span lang="ro">Copiază adresa</span><span lang="en">Copy address</span></button> <span class="status ok" id="copied" hidden><span lang="ro">Copiat</span><span lang="en">Copied</span></span></div>
           <div class="channels">
             <div class="label" style="margin-top:8px"><span lang="ro">Canalele mele</span><span lang="en">My channels</span></div>
-            <a href="https://www.youtube.com/channel/UCdw0-0Z3k0pE1vln6fGA9xw" target="_blank" rel="noopener"><b>YouTube</b><span>Panciu · 47.400</span></a>
-            <a href="https://www.tiktok.com/@iulipanciu" target="_blank" rel="noopener"><b>TikTok</b><span>@iulipanciu · 29.587</span></a>
-            <a href="https://www.facebook.com/panciu.iuli.1" target="_blank" rel="noopener"><b>Facebook</b><span>Panciu Iuli · 21.091</span></a>
-            <a href="https://www.instagram.com/iulipanciu/" target="_blank" rel="noopener"><b>Instagram</b><span>@iulipanciu · 18.000+</span></a>
+            <a href="https://www.youtube.com/channel/UCdw0-0Z3k0pE1vln6fGA9xw" target="_blank" rel="noopener"><b>YouTube</b><span lang="ro">Panciu · <span data-k="yt_subs" data-f="int">47.400</span></span><span lang="en">Panciu · <span data-k="yt_subs" data-f="int">47,400</span></span></a>
+            <a href="https://www.tiktok.com/@iulipanciu" target="_blank" rel="noopener"><b>TikTok</b><span lang="ro">@iulipanciu · <span data-k="tt_followers" data-f="int">29.587</span></span><span lang="en">@iulipanciu · <span data-k="tt_followers" data-f="int">29,587</span></span></a>
+            <a href="https://www.facebook.com/panciu.iuli.1" target="_blank" rel="noopener"><b>Facebook</b><span lang="ro">Panciu Iuli · <span data-k="fb_followers" data-f="int">21.091</span></span><span lang="en">Panciu Iuli · <span data-k="fb_followers" data-f="int">21,091</span></span></a>
+            <a href="https://www.instagram.com/iulipanciu/" target="_blank" rel="noopener"><b>Instagram</b><span lang="ro">@iulipanciu · <span data-k="ig_followers" data-f="kplus">18.000+</span></span><span lang="en">@iulipanciu · <span data-k="ig_followers" data-f="kplus">18,000+</span></span></a>
             <a href="https://www.linkedin.com/in/iulian-valentin-panciu-898362134/" target="_blank" rel="noopener"><b>LinkedIn</b><span>Iulian Valentin Panciu</span></a>
           </div>
         </div>
       </div>
-      <form id="lead-form" novalidate>
+      <div class="formwrap"><form id="lead-form" novalidate>
         <div class="row2">
           <label for="f-name"><span><span lang="ro">Nume</span><span lang="en">Name</span></span><input id="f-name" name="name" autocomplete="name" required></label>
           <label for="f-company"><span><span lang="ro">Firma</span><span lang="en">Company</span></span><input id="f-company" name="company" autocomplete="organization" required></label>
@@ -501,12 +510,19 @@ textarea{min-height:120px; resize:vertical}
         <p class="status" id="f-status" role="status" aria-live="polite"></p>
         <p class="fine"><span lang="ro">Folosesc datele doar ca să te contactez despre cererea ta.</span><span lang="en">I use your details only to contact you about your request.</span></p>
       </form>
+        <div class="done" id="f-done" hidden tabindex="-1">
+          <div class="done-mark" aria-hidden="true"></div>
+          <h3><span lang="ro">Mulțumesc, <span class="done-name"></span>!</span><span lang="en">Thank you, <span class="done-name"></span>!</span></h3>
+          <p><span lang="ro">Am primit cererea pentru <b class="done-company"></b>. Mă uit pe ea și revin cu o propunere de serie, pe emailul pe care mi l-ai lăsat.</span><span lang="en">I received the request for <b class="done-company"></b>. I'll review it and come back with a series proposal at the email you left.</span></p>
+          <button type="button" class="btn small" id="f-again"><span lang="ro">Trimite altă cerere</span><span lang="en">Send another request</span></button>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer class="foot">
     <div>VIP Networking 2024 · Iulian Panciu · iuli.panciu@vipnetworking2024.com</div>
-    <div><span lang="ro">Cifrele sunt publice și au fost verificate pe 7 noiembrie 2026 pe fiecare platformă. Fiecare card din portofoliu duce la sursă.</span><span lang="en">Figures are public and were checked on 7 November 2026 on each platform. Every portfolio card links to its source.</span></div>
+    <div><span lang="ro">Cifrele sunt publice și au fost se actualizează automat în fiecare zi (ultima dată: <span data-k="updated" data-f="date">7 noiembrie 2026</span>). Fiecare card din portofoliu duce la sursă.</span><span lang="en">Figures are public and were update automatically every day (last: <span data-k="updated" data-f="date">7 November 2026</span>). Every portfolio card links to its source.</span></div>
   </footer>
 </div>
 
@@ -556,7 +572,7 @@ textarea{min-height:120px; resize:vertical}
     document.querySelectorAll('[data-set-lang]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.setLang===l)); });
     try{ localStorage.setItem('ip-lang', l); }catch(e){}
     if(push){ try{ location.hash=(l==='en')?'en':''; }catch(e){} }
-    paintChart(); hideTip();
+    paintChart(); hideTip(); paintStats();
   }
   var start='ro';
   if(location.hash==='#en') start='en'; else { try{ var s=localStorage.getItem('ip-lang'); if(s==='en'||s==='ro') start=s; }catch(e){} }
@@ -585,6 +601,26 @@ textarea{min-height:120px; resize:vertical}
     try{ navigator.clipboard.writeText(addr.textContent.trim()).then(done, sel); }catch(e){ sel(); }
   });
 
+  /* live stats from stats.json (updated daily by GitHub Actions) */
+  var STATS=null, MONTHS={ro:['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie'],en:['January','February','March','April','May','June','July','August','September','October','November','December']};
+  function fmtN(n,l){ var s=Math.round(n).toLocaleString('en-US'); return l==='en'? s : s.replace(/,/g,'.'); }
+  function fmt(v,f,l){
+    if(f==='int') return fmtN(v,l);
+    if(f==='kplus') return fmtN(Math.floor(v/1000)*1000,l)+'+';
+    if(f==='mil1'){ var x=(v/1e6).toFixed(1); return l==='en'? x+'M' : x.replace('.',',')+' mil.'; }
+    if(f==='milplus'){ var m=Math.floor(v/1e6); return l==='en'? m+'M+' : m+' mil.+'; }
+    if(f==='date'){ var p=String(v).split('-'); return (+p[2])+' '+MONTHS[l][+p[1]-1]+' '+p[0]; }
+    return String(v);
+  }
+  function paintStats(){
+    if(!STATS) return;
+    document.querySelectorAll('[data-k]').forEach(function(el){ var v=STATS[el.dataset.k]; if(v==null) return; var host=el.closest('[lang]'); el.textContent=fmt(v, el.dataset.f, host && host.getAttribute('lang')==='en' ? 'en':'ro'); });
+  }
+  fetch('stats.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(s){
+    s.total_views=s.yt_views+s.tt_views; s.total_followers=s.yt_subs+s.tt_followers+s.ig_followers+s.fb_followers; s.total_posts=s.yt_videos+s.tt_videos+s.ig_posts;
+    STATS=s; paintStats();
+  }).catch(function(){});
+
   /* lead form → WhatsApp alert (CallMeBot) */
   var CALLMEBOT_PHONE = "";   // ex: 40722123456 (fără +)
   var CALLMEBOT_KEY   = "";   // cheia primită de la CallMeBot
@@ -594,6 +630,13 @@ textarea{min-height:120px; resize:vertical}
     en:{need:'Please fill in your name, company, email and what you want to promote.', mail:'That email address doesn\'t look right.', sending:'Sending…', ok:'Thank you! I received your request and will get back to you shortly.', err:'Couldn\'t send. Email me at iuli.panciu@vipnetworking2024.com.'}
   };
   function say(k, cls){ st.textContent=MSG[lang()][k]; st.className='status'+(cls?' '+cls:''); }
+  var done=document.getElementById('f-done');
+  function showDone(d){
+    done.querySelectorAll('.done-name').forEach(function(x){ x.textContent=d.name.split(' ')[0]; });
+    done.querySelectorAll('.done-company').forEach(function(x){ x.textContent=d.company; });
+    form.reset(); st.textContent=''; form.hidden=true; done.hidden=false; done.focus();
+  }
+  document.getElementById('f-again').addEventListener('click', function(){ done.hidden=true; form.hidden=false; });
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var v=function(id){ return document.getElementById(id).value.trim(); };
@@ -605,7 +648,7 @@ textarea{min-height:120px; resize:vertical}
     var mail=fetch('https://formsubmit.co/ajax/iuli.panciu@vipnetworking2024.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({_subject:'🔔 Cerere nouă pe vipnetworking2024.com: '+d.company, _template:'table', _replyto:d.email, Nume:d.name, Firma:d.company, Email:d.email, Telefon:d.phone||'-', Site:d.site||'-', Pachet:d.pack, Mesaj:d.message})});
     var wa=(CALLMEBOT_PHONE&&CALLMEBOT_KEY)? fetch('https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent(CALLMEBOT_PHONE)+'&text='+encodeURIComponent(text)+'&apikey='+encodeURIComponent(CALLMEBOT_KEY),{mode:'no-cors'}).catch(function(){}) : Promise.resolve();
-    Promise.all([mail,wa]).then(function(r){ if(r[0] && r[0].ok){ say('ok','ok'); form.reset(); } else { say('err','err'); } btn.disabled=false; }).catch(function(){ say('err','err'); btn.disabled=false; });
+    Promise.all([mail,wa]).then(function(r){ if(r[0] && r[0].ok){ showDone(d); } else { say('err','err'); } btn.disabled=false; }).catch(function(){ say('err','err'); btn.disabled=false; });
   });
 })();
 </script>
