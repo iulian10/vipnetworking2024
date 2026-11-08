@@ -127,6 +127,11 @@ a.card:hover{text-decoration:none; transform:translateY(-2px)}
 .night .story .t > span:last-child{color:var(--night-muted)}
 
 /* rail (portfolio) */
+.gallery{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:16px; margin-top:48px; text-align:left}
+.gallery figure{margin:0; min-width:0}
+.gallery img{display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; border-radius:22px; background:var(--alt)}
+.gallery figcaption{color:var(--muted); font-size:.88rem; margin-top:10px}
+@media (max-width: 860px){ .gallery{grid-template-columns:repeat(2, minmax(0,1fr))} }
 .plats{display:grid; gap:20px; margin-top:56px}
 .plat{background:var(--bg); border-radius:24px; padding:28px 28px 12px; min-width:0}
 .plat-h{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; padding-bottom:16px; border-bottom:1px solid var(--line)}
@@ -377,6 +382,20 @@ footer .in{display:grid; gap:6px}
           <h3>Theo Extra · Pase Pase Gol</h3>
           <p><span lang="ro">Invitat permanent: 12 episoade, peste 350.000 de vizualizări.</span><span lang="en">Regular guest: 12 episodes, 350,000+ views.</span></p>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="band center" style="padding-top:0">
+    <div class="in wide">
+      <div class="eyebrow"><span lang="ro">În culise</span><span lang="en">Behind the scenes</span></div>
+      <h2 class="h-l"><span lang="ro">Acolo unde se întâmplă.</span><span lang="en">Where it happens.</span></h2>
+      <div class="gallery">
+        <figure><img src="img/g_pitch_cupa.jpg" alt="Iulian Panciu pe gazon, lângă mingea oficială a Cupei României Betano" loading="lazy" width="800" height="1000"><figcaption><span lang="ro">Pe gazon, la Cupa României Betano</span><span lang="en">On the pitch at the Betano Romanian Cup</span></figcaption></figure>
+        <figure><img src="img/g_betano_euro.jpg" alt="Iulian Panciu la panoul Betano, partener oficial Euro 2024" loading="lazy" width="800" height="1000"><figcaption><span lang="ro">Euro 2024, alături de Betano</span><span lang="en">Euro 2024, with Betano</span></figcaption></figure>
+        <figure><img src="img/g_munchen.jpg" alt="Iulian Panciu pe stadion la Euro 2024, în München" loading="lazy" width="800" height="1000"><figcaption><span lang="ro">Euro 2024, München</span><span lang="en">Euro 2024, Munich</span></figcaption></figure>
+        <figure><img src="img/g_studio.jpg" alt="Iulian Panciu în studio, cu microfonul" loading="lazy" width="800" height="1000"><figcaption><span lang="ro">În studio, unde iau formă materialele</span><span lang="en">In the studio, where the videos take shape</span></figcaption></figure>
       </div>
     </div>
   </section>
