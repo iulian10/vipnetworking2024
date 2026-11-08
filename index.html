@@ -127,6 +127,24 @@ a.card:hover{text-decoration:none; transform:translateY(-2px)}
 .night .story .t > span:last-child{color:var(--night-muted)}
 
 /* rail (portfolio) */
+.plats{display:grid; gap:20px; margin-top:56px}
+.plat{background:var(--bg); border-radius:24px; padding:28px 28px 12px; min-width:0}
+.plat-h{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; padding-bottom:16px; border-bottom:1px solid var(--line)}
+.plat-h h3{font-size:1.9rem}
+.plat-h p{color:var(--muted); margin-top:4px; font-size:.95rem; font-variant-numeric:tabular-nums}
+.rank{list-style:none; margin:0; padding:0}
+.rank li + li{border-top:1px solid var(--line)}
+.rk{display:grid; grid-template-columns:36px minmax(0,1fr) auto; gap:16px; align-items:center; padding:16px 0; color:var(--ink)}
+.rk:hover{text-decoration:none}
+.rk:hover b{color:var(--link)}
+.rk-n{font-size:1.4rem; font-weight:700; color:var(--muted); font-variant-numeric:tabular-nums}
+.rk-t b{display:block; font-weight:600; line-height:1.3}
+.rk-m{display:block; color:var(--muted); font-size:.85rem; margin-top:3px}
+.rk-v{text-align:right; white-space:nowrap}
+.rk-v b{display:block; font-size:1.25rem; font-weight:700; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.rk-v > span{font-size:.78rem; color:var(--muted)}
+.rk-note{color:var(--muted); font-size:.85rem; padding:14px 0 16px}
+@media (max-width:520px){ .rk{grid-template-columns:28px minmax(0,1fr)} .rk-v{grid-column:2; text-align:left} .rk-v b{display:inline; font-size:1.05rem; margin-right:6px} }
 .rail{display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding:8px max(22px, env(safe-area-inset-left,0px)) 24px; margin-top:48px; scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
 .rail .clip{flex:0 0 280px; scroll-snap-align:start; background:var(--bg); border-radius:22px; overflow:hidden; display:flex; flex-direction:column; color:var(--ink); box-shadow:0 2px 12px rgb(0 0 0 / .06)}
@@ -222,7 +240,7 @@ footer .in{display:grid; gap:6px}
       <a href="#oferta" data-scroll><span lang="ro">Oferta</span><span lang="en">Offer</span></a>
       <a href="#rezultate" data-scroll><span lang="ro">Rezultate</span><span lang="en">Results</span></a>
       <a href="#clienti" data-scroll><span lang="ro">Clienți</span><span lang="en">Clients</span></a>
-      <a href="#portofoliu" data-scroll><span lang="ro">Portofoliu</span><span lang="en">Work</span></a>
+      <a href="#portofoliu" data-scroll><span lang="ro">Realizări</span><span lang="en">Results</span></a>
     </nav>
     <div class="lang" role="group" aria-label="Limba / Language">
       <button type="button" id="lang-ro" data-set-lang="ro" aria-pressed="true">RO</button>
@@ -238,10 +256,10 @@ footer .in{display:grid; gap:6px}
     <div class="in">
       <div class="eyebrow">VIP Networking 2024 · Iulian Panciu</div>
       <h1 class="h-xl"><span lang="ro">Hai să vedem dacă drumurile noastre se pot intersecta.</span><span lang="en">Let's see if our paths can cross.</span></h1>
-      <p class="sub"><span lang="ro">Brandul tău are ceva de spus. Eu îl transform în conținut video pe care oamenii îl urmăresc până la final: 12 materiale pe lună, gata de publicare.</span><span lang="en">Your brand has something to say. I turn it into video people watch to the very end: 12 pieces a month, ready to publish.</span></p>
+      <p class="sub"><span lang="ro">Brandul tău are ceva de spus. Eu îl transform în conținut video pe care oamenii îl urmăresc până la final: 48 de materiale pe lună, pentru 4 platforme.</span><span lang="en">Your brand has something to say. I turn it into video people watch to the very end: 48 pieces a month, for 4 platforms.</span></p>
       <div class="cta">
         <a class="pill" href="#contact" data-scroll><span lang="ro">Cere o ofertă</span><span lang="en">Get a quote</span></a>
-        <a class="more" href="#portofoliu" data-scroll><span lang="ro">Vezi portofoliul</span><span lang="en">See the work</span></a>
+        <a class="more" href="#portofoliu" data-scroll><span lang="ro">Vezi realizările</span><span lang="en">See the results</span></a>
       </div>
       <div class="trust"><span lang="ro">Au lucrat cu mine:</span><span lang="en">Worked with:</span> <b>Betano</b><b>888</b><b>TVR 1</b><b>ProSport</b><b>Global Talent United</b></div>
     </div>
@@ -264,17 +282,18 @@ footer .in{display:grid; gap:6px}
   <section id="oferta" class="band night center" style="margin-top:clamp(72px,10vw,120px)">
     <div class="in">
       <div class="eyebrow"><span lang="ro">Soluția</span><span lang="en">The solution</span></div>
-      <h2 class="h-l"><span lang="ro">12 materiale video.<br>În fiecare lună.</span><span lang="en">12 videos.<br>Every month.</span></h2>
+      <h2 class="h-l"><span lang="ro">48 de materiale.<br>Pe 4 platforme. Lunar.</span><span lang="en">48 pieces.<br>On 4 platforms. Monthly.</span></h2>
+      <p class="sub"><span lang="ro">12 clipuri originale, fiecare livrat nativ pentru YouTube, TikTok, Instagram și Facebook.</span><span lang="en">12 original videos, each delivered natively for YouTube, TikTok, Instagram and Facebook.</span></p>
       <div class="price"><b>2.500 €</b><span><span lang="ro">pe lună, TVA inclus</span><span lang="en">per month, VAT included</span></span></div>
       <div class="trio">
-        <div class="tile"><h3><span lang="ro">3 pe săptămână</span><span lang="en">3 a week</span></h3><p><span lang="ro">Un ritm constant, fără pauze între campanii.</span><span lang="en">A steady rhythm, with no gaps between campaigns.</span></p></div>
-        <div class="tile"><h3><span lang="ro">Gata de publicare</span><span lang="en">Ready to publish</span></h3><p><span lang="ro">Primești fișierele finale, adaptate pentru TikTok, Reels, Shorts și Facebook.</span><span lang="en">You receive final files, formatted for TikTok, Reels, Shorts and Facebook.</span></p></div>
+        <div class="tile"><h3><span lang="ro">12 clipuri native</span><span lang="en">12 native videos</span></h3><p><span lang="ro">3 pe săptămână, fiecare în 4 variante: una pentru fiecare platformă. În total, 48 de materiale.</span><span lang="en">3 a week, each in 4 versions, one per platform. 48 pieces in total.</span></p></div>
+        <div class="tile"><h3><span lang="ro">Gata de publicare</span><span lang="en">Ready to publish</span></h3><p><span lang="ro">Primești fișierele finale, cu formatul, durata și textul potrivite fiecărei platforme.</span><span lang="en">You receive final files with the right format, length and copy for each platform.</span></p></div>
         <div class="tile"><h3><span lang="ro">De la idee la montaj</span><span lang="en">From idea to final cut</span></h3><p><span lang="ro">Strategie, scenariu, filmare, montaj, subtitrare și sunet.</span><span lang="en">Strategy, script, filming, editing, captions and sound.</span></p></div>
       </div>
       <ol class="story" style="text-align:left; margin-top:56px; border-color:#333">
         <li style="border-color:#333"><div class="y">1</div><div class="t"><span lang="ro">Discutăm despre brandul tău.</span><span lang="en">We talk about your brand.</span><span><span lang="ro">Ce vinzi, cui și ce vrei să rămână în mintea oamenilor.</span><span lang="en">What you sell, to whom, and what people should remember.</span></span></div></li>
         <li style="border-color:#333"><div class="y">2</div><div class="t"><span lang="ro">Primești planul seriei.</span><span lang="en">You get the series plan.</span><span><span lang="ro">Subiectele lunii, formatul și calendarul, aprobate de tine înainte de filmare.</span><span lang="en">The month's topics, format and calendar, approved by you before filming.</span></span></div></li>
-        <li style="border-color:#333; border-bottom:1px solid #333"><div class="y">3</div><div class="t"><span lang="ro">Primești materialele, săptămână de săptămână.</span><span lang="en">You get the videos, week after week.</span><span><span lang="ro">Trei pe săptămână, gata de publicat pe conturile tale.</span><span lang="en">Three a week, ready to post on your accounts.</span></span></div></li>
+        <li style="border-color:#333; border-bottom:1px solid #333"><div class="y">3</div><div class="t"><span lang="ro">Primești materialele, săptămână de săptămână.</span><span lang="en">You get the videos, week after week.</span><span><span lang="ro">Trei clipuri pe săptămână, fiecare în varianta pentru fiecare platformă.</span><span lang="en">Three videos a week, each in a version for every platform.</span></span></div></li>
       </ol>
       <div class="cta"><a class="pill" href="#contact" data-scroll><span lang="ro">Vreau pachetul</span><span lang="en">I want the package</span></a></div>
     </div>
@@ -285,12 +304,12 @@ footer .in{display:grid; gap:6px}
     <div class="in">
       <div class="eyebrow"><span lang="ro">De ce eu</span><span lang="en">Why me</span></div>
       <h2 class="h-l"><span lang="ro">Am testat pe canalele mele.<br>Tu primești doar ce funcționează.</span><span lang="en">I tested on my own channels.<br>You get only what works.</span></h2>
-      <p class="sub"><span lang="ro">Șapte ani, aproape 3.000 de clipuri publicate și peste 40 de milioane de vizualizări. Fiecare cifră de mai jos e publică.</span><span lang="en">Seven years, almost 3,000 published videos and over 40 million views. Every number below is public.</span></p>
+      <p class="sub"><span lang="ro">Șapte ani, peste 3.400 de materiale și peste 40 de milioane de vizualizări. Specializat în ambele formate: long form și short form. Fiecare cifră de mai jos e publică.</span><span lang="en">Seven years, 3,400+ pieces and 40+ million views. Specialised in both formats: long form and short form. Every number below is public.</span></p>
       <div class="nums">
         <div class="num"><b><span lang="ro"><span data-k="total_views" data-f="milplus">40 mil.+</span></span><span lang="en"><span data-k="total_views" data-f="milplus">40M+</span></span></b><span><span lang="ro">vizualizări pe YouTube și TikTok</span><span lang="en">views on YouTube and TikTok</span></span></div>
         <div class="num"><b><span lang="ro"><span data-k="total_followers" data-f="kplus">116.000+</span></span><span lang="en"><span data-k="total_followers" data-f="kplus">116,000+</span></span></b><span><span lang="ro">urmăritori pe canalele proprii</span><span lang="en">followers on my own channels</span></span></div>
         <div class="num"><b>500+</b><span><span lang="ro">materiale video realizate pentru Betano</span><span lang="en">videos made for Betano</span></span></div>
-        <div class="num"><b><span lang="ro"><span data-k="total_posts" data-f="int">2.993</span></span><span lang="en"><span data-k="total_posts" data-f="int">2,993</span></span></b><span><span lang="ro">clipuri publicate pe canalele proprii</span><span lang="en">videos published on my own channels</span></span></div>
+        <div class="num"><b><span lang="ro"><span data-k="total_materials" data-f="intplus">3.495+</span></span><span lang="en"><span data-k="total_materials" data-f="intplus">3,495+</span></span></b><span><span lang="ro">materiale produse din 2019, pe toate platformele</span><span lang="en">pieces produced since 2019, across all platforms</span></span></div>
       </div>
       <div class="platforms" style="text-align:left">
         <div class="pf"><h3>YouTube</h3><p><span lang="ro"><span data-k="yt_subs" data-f="int">47.400</span> abonați · <span data-k="yt_views" data-f="mil1">11,1 mil.</span> vizualizări</span><span lang="en"><span data-k="yt_subs" data-f="int">47,400</span> subscribers · <span data-k="yt_views" data-f="mil1">11.1M</span> views</span></p></div>
@@ -356,7 +375,7 @@ footer .in{display:grid; gap:6px}
         <a class="card" style="grid-column:1 / -1" href="https://www.youtube.com/watch?v=5SWyUn5rSlI" target="_blank" rel="noopener">
           <span class="tag"><span lang="ro">Emisiune online</span><span lang="en">Online show</span></span>
           <h3>Theo Extra · Pase Pase Gol</h3>
-          <p><span lang="ro">Invitat permanent: 12 episoade, peste 350.000 de vizualizări. Plus colaborări cu creatorii Andu și Iosif Cyd, fiecare cu peste 50.000 de abonați pe YouTube.</span><span lang="en">Regular guest: 12 episodes, 350,000+ views. Plus collaborations with creators Andu and Iosif Cyd, each with 50,000+ YouTube subscribers.</span></p>
+          <p><span lang="ro">Invitat permanent: 12 episoade, peste 350.000 de vizualizări.</span><span lang="en">Regular guest: 12 episodes, 350,000+ views.</span></p>
         </a>
       </div>
     </div>
@@ -377,114 +396,18 @@ footer .in{display:grid; gap:6px}
   </section>
 
   <!-- PORTFOLIO -->
-  <section id="portofoliu" class="band alt" style="padding-top:0">
-    <div class="in center">
-      <div class="eyebrow"><span lang="ro">Portofoliu</span><span lang="en">Portfolio</span></div>
-      <h2 class="h-l"><span lang="ro">Cele mai urmărite materiale.</span><span lang="en">The most-watched work.</span></h2>
+  <section id="portofoliu" class="band alt center">
+    <div class="in">
+      <div class="eyebrow"><span lang="ro">Realizări</span><span lang="en">Track record</span></div>
+      <h2 class="h-l"><span lang="ro">Cele mai mari realizări,<br>pe fiecare platformă.</span><span lang="en">The biggest results,<br>platform by platform.</span></h2>
+      <p class="sub"><span lang="ro">Clasamente reale, cu link la fiecare material. Apasă oricare ca să-l vezi.</span><span lang="en">Real rankings, with a link to every video. Tap any to watch it.</span></p>
+      <div class="plats" style="text-align:left">
+<div class="plat" id="p-youtube"><div class="plat-h"><div><h3>YouTube</h3><p><span lang="ro"><span data-k="yt_subs" data-f="int">47.400</span> abonați · <span data-k="yt_videos" data-f="int">1.347</span> materiale · <span data-k="yt_views" data-f="mil1">11,6 mil.</span> vizualizări · long form și short form, din 2019</span><span lang="en"><span data-k="yt_subs" data-f="int">47,400</span> subscribers · <span data-k="yt_videos" data-f="int">1,347</span> videos · <span data-k="yt_views" data-f="mil1">11.6M</span> views · long and short form, since 2019</span></p></div><a class="more" href="https://www.youtube.com/channel/UCdw0-0Z3k0pE1vln6fGA9xw" target="_blank" rel="noopener"><span lang="ro">Vezi canalul</span><span lang="en">Visit channel</span></a></div><ol class="rank"><li><a class="rk" href="https://www.youtube.com/shorts/kmMEPdO53EE" target="_blank" rel="noopener"><span class="rk-n">1</span><span class="rk-t"><b><span lang="ro">Seară de Nations League pe Arena Națională: România – Kosovo</span><span lang="en">Nations League night at the National Arena: Romania vs Kosovo</span></b><span class="rk-m">16.11.2024 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">185.863</span><span lang="en">185,863</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.youtube.com/shorts/Z_5tdz8g1Hw" target="_blank" rel="noopener"><span class="rk-n">2</span><span class="rk-t"><b><span lang="ro">Cu câte secunde e în urmă televizorul față de stadion?</span><span lang="en">How many seconds is TV behind the stadium?</span></b><span class="rk-m">06.10.2023 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">161.691</span><span lang="en">161,691</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.youtube.com/watch?v=nDZDfh_tBG4" target="_blank" rel="noopener"><span class="rk-n">3</span><span class="rk-t"><b><span lang="ro">România – Spania 1-2: atmosfera de pe stadion</span><span lang="en">Romania vs Spain 1-2: the atmosphere in the stadium</span></b><span class="rk-m">06.09.2019 · <span lang="ro">Long form</span><span lang="en">Long form</span></span></span><span class="rk-v"><b><span lang="ro">121.383</span><span lang="en">121,383</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.youtube.com/watch?v=y8LVhk40f-w" target="_blank" rel="noopener"><span class="rk-n">4</span><span class="rk-t"><b><span lang="ro">FCSB – Dinamo 6-0, trăit din tribună</span><span lang="en">FCSB vs Dinamo 6-0, lived from the stands</span></b><span class="rk-m">12.09.2021 · <span lang="ro">Long form</span><span lang="en">Long form</span></span></span><span class="rk-v"><b><span lang="ro">116.671</span><span lang="en">116,671</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.youtube.com/watch?v=3oYHYVRjeOc" target="_blank" rel="noopener"><span class="rk-n">5</span><span class="rk-t"><b><span lang="ro">Dinamo – FCSB 2-1: spectacolul din peluze</span><span lang="en">Dinamo vs FCSB 2-1: the show in the stands</span></b><span class="rk-m">17.02.2020 · <span lang="ro">Long form</span><span lang="en">Long form</span></span></span><span class="rk-v"><b><span lang="ro">105.165</span><span lang="en">105,165</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.youtube.com/shorts/DAkAxvu4sZQ" target="_blank" rel="noopener"><span class="rk-n">6</span><span class="rk-t"><b><span lang="ro">Ce jucători uriași puteau ajunge în România, dar au fost refuzați?</span><span lang="en">Which huge players could have come to Romania but were turned down?</span></b><span class="rk-m">16.10.2026 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">103.831</span><span lang="en">103,831</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.youtube.com/watch?v=tER52Mtcgoc" target="_blank" rel="noopener"><span class="rk-n">7</span><span class="rk-t"><b><span lang="ro">CFR Cluj – Sevilla: golul și penalty-ul dat de VAR</span><span lang="en">CFR Cluj vs Sevilla: the goal and the VAR penalty</span></b><span class="rk-m">20.02.2020 · <span lang="ro">Long form</span><span lang="en">Long form</span></span></span><span class="rk-v"><b><span lang="ro">94.045</span><span lang="en">94,045</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.youtube.com/watch?v=PBBXvLxhJMo" target="_blank" rel="noopener"><span class="rk-n">8</span><span class="rk-t"><b><span lang="ro">FCSB – U Craiova 3-2, play-off: din peluză</span><span lang="en">FCSB vs U Craiova 3-2, play-off: from the stands</span></b><span class="rk-m">01.04.2019 · <span lang="ro">Long form</span><span lang="en">Long form</span></span></span><span class="rk-v"><b><span lang="ro">79.791</span><span lang="en">79,791</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li></ol></div>
+<div class="plat" id="p-tiktok"><div class="plat-h"><div><h3>TikTok</h3><p><span lang="ro"><span data-k="tt_followers" data-f="int">29.587</span> urmăritori · <span data-k="tt_videos" data-f="int">984</span> materiale · <span data-k="tt_views" data-f="mil1">29,1 mil.</span> vizualizări · 60 de clipuri peste 100.000</span><span lang="en"><span data-k="tt_followers" data-f="int">29,587</span> followers · <span data-k="tt_videos" data-f="int">984</span> videos · <span data-k="tt_views" data-f="mil1">29.1M</span> views · 60 videos above 100,000</span></p></div><a class="more" href="https://www.tiktok.com/@iulipanciu" target="_blank" rel="noopener"><span lang="ro">Vezi canalul</span><span lang="en">Visit channel</span></a></div><ol class="rank"><li><a class="rk" href="https://www.tiktok.com/@iulipanciu/video/7647940443560463619" target="_blank" rel="noopener"><span class="rk-n">1</span><span class="rk-t"><b><span lang="ro">Știai că mingea oficială de la Mondial trebuie încărcată ca un telefon?</span><span lang="en">Did you know the official World Cup ball has to be charged like a phone?</span></b><span class="rk-m">05.06.2026 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">799.000</span><span lang="en">799,000</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.tiktok.com/@iulipanciu/video/7505541567952751894" target="_blank" rel="noopener"><span class="rk-n">2</span><span class="rk-t"><b><span lang="ro">„Aduceți-ne echipe să jucăm!” Gigi Becali, în mijlocul fanilor</span><span lang="en">“Bring us teams to play!” Gigi Becali among the fans</span></b><span class="rk-m">17.05.2025 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">521.800</span><span lang="en">521,800</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.tiktok.com/@iulipanciu/video/7408676991169219873" target="_blank" rel="noopener"><span class="rk-n">3</span><span class="rk-t"><b><span lang="ro">Darius Olaru aduce nebunia în Ghencea și FCSB în Europa League</span><span lang="en">Darius Olaru sets Ghencea alight and sends FCSB to the Europa League</span></b><span class="rk-m">29.08.2024 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">488.600</span><span lang="en">488,600</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.tiktok.com/@iulipanciu/video/7103254429045902598" target="_blank" rel="noopener"><span class="rk-n">4</span><span class="rk-t"><b><span lang="ro">Cum se salută steliștii de acum încolo</span><span lang="en">How FCSB fans greet each other from now on</span></b><span class="rk-m">29.05.2022 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">471.100</span><span lang="en">471,100</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.tiktok.com/@iulipanciu/video/7206079122513218821" target="_blank" rel="noopener"><span class="rk-n">5</span><span class="rk-t"><b><span lang="ro">Barcelona – Real Madrid: „Oleee, oleee”</span><span lang="en">Barcelona vs Real Madrid: “Oleee, oleee”</span></b><span class="rk-m">03.03.2023 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">427.300</span><span lang="en">427,300</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.tiktok.com/@iulipanciu/video/7383314885750295840" target="_blank" rel="noopener"><span class="rk-n">6</span><span class="rk-t"><b><span lang="ro">Olanda – Franța: golul Olandei, anulat de VAR</span><span lang="en">Netherlands vs France: the Dutch goal ruled out by VAR</span></b><span class="rk-m">22.06.2024 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">415.000</span><span lang="en">415,000</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.tiktok.com/@iulipanciu/video/7419033064707345696" target="_blank" rel="noopener"><span class="rk-n">7</span><span class="rk-t"><b><span lang="ro">Golul lui Bîrligea, trăit din tribună</span><span lang="en">Bîrligea's goal, lived from the stands</span></b><span class="rk-m">26.09.2024 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">400.900</span><span lang="en">400,900</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.tiktok.com/@iulipanciu/video/7008627674444827910" target="_blank" rel="noopener"><span class="rk-n">8</span><span class="rk-t"><b><span lang="ro">Camora primește roșu în Conference League</span><span lang="en">Camora sent off in the Conference League</span></b><span class="rk-m">16.09.2021 · <span lang="ro">Short form</span><span lang="en">Short form</span></span></span><span class="rk-v"><b><span lang="ro">383.600</span><span lang="en">383,600</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li></ol></div>
+<div class="plat" id="p-instagram"><div class="plat-h"><div><h3>Instagram</h3><p><span lang="ro"><span data-k="ig_followers" data-f="kplus">18.000+</span> urmăritori · <span data-k="ig_posts" data-f="int">664</span> postări, din 2019</span><span lang="en"><span data-k="ig_followers" data-f="kplus">18,000+</span> followers · <span data-k="ig_posts" data-f="int">664</span> posts, since 2019</span></p></div><a class="more" href="https://www.instagram.com/iulipanciu/" target="_blank" rel="noopener"><span lang="ro">Vezi canalul</span><span lang="en">Visit channel</span></a></div><ol class="rank"><li><a class="rk" href="https://www.instagram.com/p/C84fnoRoGB6/" target="_blank" rel="noopener"><span class="rk-n">1</span><span class="rk-t"><b><span lang="ro">Cum îi explic iubitei golurile lui Bellingham și Kane (Euro 2024)</span><span lang="en">Explaining Bellingham's and Kane's goals to my girlfriend (Euro 2024)</span></b><span class="rk-m">01.07.2024 · <span lang="ro">Reel</span><span lang="en">Reel</span> · <span class="rk-x"><span lang="ro">37.156 de aprecieri</span><span lang="en">37,156 likes</span></span></span></span><span class="rk-v"><b><span lang="ro">393.004</span><span lang="en">393,004</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.instagram.com/p/C-nZ416oBO9/" target="_blank" rel="noopener"><span class="rk-n">2</span><span class="rk-t"><b><span lang="ro">FCSB – Sparta Praga: cine câștigă?</span><span lang="en">FCSB vs Sparta Prague: who wins?</span></b><span class="rk-m">13.08.2024 · <span lang="ro">Reel</span><span lang="en">Reel</span></span></span><span class="rk-v"><b><span lang="ro">15.230</span><span lang="en">15,230</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.instagram.com/p/C-nUCRUot-I/" target="_blank" rel="noopener"><span class="rk-n">3</span><span class="rk-t"><b><span lang="ro">Pronunță numele jucătorilor Spartei în limba ta</span><span lang="en">Pronounce the Sparta players' names in your language</span></b><span class="rk-m">13.08.2024 · <span lang="ro">Reel</span><span lang="en">Reel</span> · <span class="rk-x"><span lang="ro">1.827 de aprecieri</span><span lang="en">1,827 likes</span></span></span></span><span class="rk-v"><b><span lang="ro">13.041</span><span lang="en">13,041</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.instagram.com/p/C6PI-0ooGQK/" target="_blank" rel="noopener"><span class="rk-n">4</span><span class="rk-t"><b><span lang="ro">„Norocul ți-l faci cu mâna ta”: FCSB și titlul 27</span><span lang="en">“You make your own luck”: FCSB and title no. 27</span></b><span class="rk-m">26.04.2024 · <span lang="ro">Reel</span><span lang="en">Reel</span> · <span class="rk-x"><span lang="ro">1.761 de aprecieri</span><span lang="en">1,761 likes</span></span></span></span><span class="rk-v"><b><span lang="ro">11.862</span><span lang="en">11,862</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li><li><a class="rk" href="https://www.instagram.com/p/C_S1wc4o0v-/" target="_blank" rel="noopener"><span class="rk-n">5</span><span class="rk-t"><b><span lang="ro">Manchester United vine la București</span><span lang="en">Manchester United is coming to Bucharest</span></b><span class="rk-m">30.08.2024 · <span lang="ro">Reel</span><span lang="en">Reel</span> · <span class="rk-x"><span lang="ro">2.518 aprecieri</span><span lang="en">2,518 likes</span></span></span></span><span class="rk-v"><b><span lang="ro">11.342</span><span lang="en">11,342</span></b><span lang="ro">vizualizări</span><span lang="en">views</span></span></a></li></ol><p class="rk-note"><span lang="ro">Instagram nu publică vizualizările tuturor postărilor. Clasamentul include materialele cu cifre verificabile public.</span><span lang="en">Instagram doesn't publish views for every post. The ranking lists the posts with publicly verifiable figures.</span></p></div>
+<div class="plat" id="p-facebook"><div class="plat-h"><div><h3>Facebook</h3><p><span lang="ro"><span data-k="fb_followers" data-f="int">21.091</span> urmăritori pe profilul Panciu Iuli</span><span lang="en"><span data-k="fb_followers" data-f="int">21,091</span> followers on the Panciu Iuli profile</span></p></div><a class="more" href="https://www.facebook.com/panciu.iuli.1" target="_blank" rel="noopener"><span lang="ro">Vezi canalul</span><span lang="en">Visit channel</span></a></div><p class="rk-note"><span lang="ro">Aceleași materiale ajung, adaptate nativ, și la publicul de pe Facebook.</span><span lang="en">The same content reaches the Facebook audience too, natively adapted.</span></p></div>
+      </div>
     </div>
-    <div class="rail" id="grid">
-      <a class="clip" data-format="story" href="https://www.tiktok.com/@iulipanciu/video/7647940443560463619" target="_blank" rel="noopener">
-        <div class="thumb"><img class="low" src="img/tt_7647940443560463619.jpg" alt="" loading="lazy"><span class="badge">TikTok</span></div>
-        <div class="clip-body">
-          <div class="clip-date">05.06.2026 · <span lang="ro">poveste</span><span lang="en">story</span></div>
-          <div class="clip-title"><span lang="ro">Știai că mingea oficială de la Mondial trebuie încărcată ca un telefon?</span><span lang="en">Did you know the official World Cup ball has to be charged like a phone?</span></div>
-          <div class="clip-stats"><b><span lang="ro">799.000</span><span lang="en">799,000</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">29.800 de aprecieri · 9.191 de distribuiri</span><span lang="en">29,800 likes · 9,191 shares</span></span></div>
-        </div>
-      </a>
-
-      
-
-      <a class="clip" data-format="vlog" href="https://www.tiktok.com/@iulipanciu/video/7505541567952751894" target="_blank" rel="noopener">
-        <div class="thumb"><img src="img/tt_7505541567952751894.jpg" alt="" loading="lazy"><span class="badge">TikTok</span></div>
-        <div class="clip-body">
-          <div class="clip-date">17.05.2025 · FCSB</div>
-          <div class="clip-title"><span lang="ro">„Aduceți-ne echipe să jucăm!” Gigi Becali, în mijlocul fanilor</span><span lang="en">“Bring us teams to play!” Gigi Becali among the fans</span></div>
-          <div class="clip-stats"><b><span lang="ro">521.800</span><span lang="en">521,800</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">40.900 de aprecieri · 5.189 de distribuiri</span><span lang="en">40,900 likes · 5,189 shares</span></span></div>
-        </div>
-      </a>
-
-      <a class="clip" data-format="vlog" href="https://www.tiktok.com/@iulipanciu/video/7408676991169219873" target="_blank" rel="noopener">
-        <div class="thumb"><img src="img/tt_7408676991169219873.jpg" alt="" loading="lazy"><span class="badge">TikTok</span></div>
-        <div class="clip-body">
-          <div class="clip-date">29.08.2024 · Europa League</div>
-          <div class="clip-title"><span lang="ro">Darius Olaru declanșează nebunia în Ghencea și duce FCSB în Europa League</span><span lang="en">Darius Olaru sets Ghencea alight and sends FCSB into the Europa League</span></div>
-          <div class="clip-stats"><b><span lang="ro">488.600</span><span lang="en">488,600</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">26.900 de aprecieri</span><span lang="en">26,900 likes</span></span></div>
-        </div>
-      </a>
-
-      <a class="clip" data-format="fun" href="https://www.instagram.com/p/C84fnoRoGB6/" target="_blank" rel="noopener">
-        <div class="thumb"><img src="img/ig_euro2024.jpg" alt="" loading="lazy"><span class="badge">Instagram</span></div>
-        <div class="clip-body">
-          <div class="clip-date">01.07.2024 · Euro 2024</div>
-          <div class="clip-title"><span lang="ro">Cum îi explic iubitei golurile lui Bellingham și Kane</span><span lang="en">Explaining Bellingham's and Kane's goals to my girlfriend</span></div>
-          <div class="clip-stats"><b><span lang="ro">393.000+</span><span lang="en">393,000+</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">37.164 de aprecieri</span><span lang="en">37,164 likes</span></span></div>
-        </div>
-      </a>
-
-      <a class="clip" data-format="story" href="https://www.tiktok.com/@iulipanciu/video/7646486763522788630" target="_blank" rel="noopener">
-        <div class="thumb"><img class="low" src="img/tt_7646486763522788630.jpg" alt="" loading="lazy"><span class="badge">TikTok</span></div>
-        <div class="clip-body">
-          <div class="clip-date">01.06.2026 · <span lang="ro">poveste</span><span lang="en">story</span></div>
-          <div class="clip-title"><span lang="ro">Schimbări istorice în fotbal: ce se modifică în fotbalul mondial</span><span lang="en">Historic changes: what is changing in world football</span></div>
-          <div class="clip-stats"><b><span lang="ro">369.800</span><span lang="en">369,800</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">10.700 de aprecieri · 4.856 de distribuiri</span><span lang="en">10,700 likes · 4,856 shares</span></span></div>
-        </div>
-      </a>
-
-      <a class="clip" data-format="vlog" href="https://www.youtube.com/shorts/kmMEPdO53EE" target="_blank" rel="noopener">
-        <div class="thumb"><img src="img/yt_kmMEPdO53EE_v.jpg" alt="" loading="lazy"><span class="badge">YouTube Shorts</span></div>
-        <div class="clip-body">
-          <div class="clip-date">16.11.2024 · Nations League</div>
-          <div class="clip-title"><span lang="ro">Seară de Nations League pe Arena Națională: România – Kosovo</span><span lang="en">Nations League night at the National Arena: Romania vs Kosovo</span></div>
-          <div class="clip-stats"><b><span lang="ro">185.860</span><span lang="en">185,860</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">460 de comentarii</span><span lang="en">460 comments</span></span></div>
-        </div>
-      </a>
-
-      <a class="clip" data-format="story" href="https://www.youtube.com/shorts/Z_5tdz8g1Hw" target="_blank" rel="noopener">
-        <div class="thumb"><img src="img/yt_Z_5tdz8g1Hw_v.jpg" alt="" loading="lazy"><span class="badge">YouTube Shorts</span></div>
-        <div class="clip-body">
-          <div class="clip-date">06.10.2023 · <span lang="ro">concept</span><span lang="en">concept</span></div>
-          <div class="clip-title"><span lang="ro">Cu câte secunde e în urmă televizorul față de stadion?</span><span lang="en">How many seconds is TV behind the stadium?</span></div>
-          <div class="clip-stats"><b><span lang="ro">161.691</span><span lang="en">161,691</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">4.780 de aprecieri</span><span lang="en">4,780 likes</span></span></div>
-        </div>
-      </a>
-
-      <a class="clip" data-format="vlog" href="https://www.youtube.com/watch?v=nDZDfh_tBG4" target="_blank" rel="noopener">
-        <div class="thumb"><img src="img/nDZDfh_tBG4.jpg" alt="" loading="lazy"><span class="badge">YouTube</span></div>
-        <div class="clip-body">
-          <div class="clip-date">06.09.2019 · <span lang="ro">naționala</span><span lang="en">national team</span></div>
-          <div class="clip-title"><span lang="ro">România – Spania 1-2: atmosferă incendiară</span><span lang="en">Romania vs Spain 1-2: an electric atmosphere</span></div>
-          <div class="clip-stats"><b><span lang="ro">121.383</span><span lang="en">121,383</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">4.298 de aprecieri</span><span lang="en">4,298 likes</span></span></div>
-        </div>
-      </a>
-
-      <a class="clip" data-format="vlog" href="https://www.youtube.com/watch?v=y8LVhk40f-w" target="_blank" rel="noopener">
-        <div class="thumb"><img src="img/y8LVhk40f-w.jpg" alt="" loading="lazy"><span class="badge">YouTube</span></div>
-        <div class="clip-body">
-          <div class="clip-date">12.09.2021 · <span lang="ro">derby</span><span lang="en">derby</span></div>
-          <div class="clip-title"><span lang="ro">FCSB – Dinamo 6-0, trăit din tribună</span><span lang="en">FCSB vs Dinamo 6-0, lived from the stands</span></div>
-          <div class="clip-stats"><b><span lang="ro">116.671</span><span lang="en">116,671</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">5.533 de aprecieri</span><span lang="en">5,533 likes</span></span></div>
-        </div>
-      </a>
-
-      <a class="clip" data-format="story" href="https://www.youtube.com/shorts/DAkAxvu4sZQ" target="_blank" rel="noopener">
-        <div class="thumb"><img src="img/yt_DAkAxvu4sZQ_v.jpg" alt="" loading="lazy"><span class="badge">YouTube Shorts</span></div>
-        <div class="clip-body">
-          <div class="clip-date">16.10.2026 · <span lang="ro">poveste</span><span lang="en">story</span></div>
-          <div class="clip-title"><span lang="ro">Ce jucători uriași puteau ajunge în România, dar au fost refuzați?</span><span lang="en">Which huge players could have come to Romania but were turned down?</span></div>
-          <div class="clip-stats"><b><span lang="ro">103.333</span><span lang="en">103,333</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">1.633 de aprecieri</span><span lang="en">1,633 likes</span></span></div>
-        </div>
-      </a>
-
-      <a class="clip" data-format="vlog" href="https://www.youtube.com/watch?v=pvWhSeh_Ap8" target="_blank" rel="noopener">
-        <div class="thumb"><img src="img/pvWhSeh_Ap8.jpg" alt="" loading="lazy"><span class="badge">YouTube</span></div>
-        <div class="clip-body">
-          <div class="clip-date">10.09.2022 · <span lang="ro">deplasare</span><span lang="en">away trip</span></div>
-          <div class="clip-title"><span lang="ro">10.000 de steliști la Londra: West Ham – FCSB</span><span lang="en">10,000 FCSB fans in London: West Ham vs FCSB</span></div>
-          <div class="clip-stats"><b><span lang="ro">78.768</span><span lang="en">78,768</span></b><span><span lang="ro">vizualizări</span><span lang="en">views</span></span><span class="sub"><span lang="ro">3.562 de aprecieri</span><span lang="en">3,562 likes</span></span></div>
-        </div>
-      </a>
-    </div>
-    <div class="rail-nav"><button type="button" id="rail-prev" aria-label="Înapoi">‹</button><button type="button" id="rail-next" aria-label="Înainte">›</button></div>
   </section>
 
   <!-- STORY -->
@@ -493,9 +416,10 @@ footer .in{display:grid; gap:6px}
       <div class="eyebrow"><span lang="ro">Parcursul</span><span lang="en">The journey</span></div>
       <h2 class="h-l"><span lang="ro">Șapte ani.<br>De la tribună la studio.</span><span lang="en">Seven years.<br>From the stands to the studio.</span></h2>
       <ol class="story" style="text-align:left">
-        <li><div class="y">2019</div><div class="t"><span lang="ro">Primul canal: reportaje de la stadion.</span><span lang="en">First channel: stadium reporting.</span><span><span lang="ro">Astăzi, 47.400 de abonați pe YouTube.</span><span lang="en">Today, 47,400 YouTube subscribers.</span></span></div></li>
+        <li><div class="y">2019</div><div class="t"><span lang="ro">Long form pe YouTube: reportaje de la stadion.</span><span lang="en">Long form on YouTube: stadium reporting.</span><span><span lang="ro">Materiale de 15–40 de minute. Astăzi, 47.400 de abonați.</span><span lang="en">15–40 minute pieces. Today, 47,400 subscribers.</span></span></div></li>
         <li><div class="y">2021</div><div class="t"><span lang="ro">Televiziune națională, pe TVR 1.</span><span lang="en">National television, on TVR 1.</span><span><span lang="ro">Reprezentantul FCSB în „Microbist de România”.</span><span lang="en">FCSB's representative on “Microbist de România”.</span></span></div></li>
         <li><div class="y">2022</div><div class="t"><span lang="ro">Începe colaborarea cu Betano.</span><span lang="en">Partnership with Betano begins.</span><span><span lang="ro">Peste 500 de materiale video până astăzi.</span><span lang="en">Over 500 videos to date.</span></span></div></li>
+        <li><div class="y">2023</div><div class="t"><span lang="ro">Short form pe TikTok, Reels și Shorts.</span><span lang="en">Short form on TikTok, Reels and Shorts.</span><span><span lang="ro">162 de clipuri în primul an și 4 milioane de vizualizări doar pe TikTok.</span><span lang="en">162 videos in the first year and 4 million views on TikTok alone.</span></span></div></li>
         <li><div class="y">2024</div><div class="t"><span lang="ro">Recrutat de Global Talent United.</span><span lang="en">Signed by Global Talent United.</span><span><span lang="ro">Absolvent al Influencer Accelerator, programul lui Florin Grozea.</span><span lang="en">Graduate of Florin Grozea's Influencer Accelerator.</span></span></div></li>
         <li><div class="y">2025</div><div class="t"><span lang="ro">9,8 milioane de vizualizări într-un an.</span><span lang="en">9.8 million views in one year.</span><span><span lang="ro">Doar pe TikTok, din 329 de materiale.</span><span lang="en">On TikTok alone, from 329 videos.</span></span></div></li>
         <li><div class="y">2026</div><div class="t"><span lang="ro">Seria 888 de la Mondial și invitat la ProSport.</span><span lang="en">The 888 World Cup series and a ProSport studio guest spot.</span><span><span lang="ro">Astăzi produc conținut video pentru branduri, prin VIP Networking 2024.</span><span lang="en">Today I produce video content for brands, through VIP Networking 2024.</span></span></div></li>
@@ -534,7 +458,7 @@ footer .in{display:grid; gap:6px}
             <label for="f-site"><span><span lang="ro">Site sau pagina firmei</span><span lang="en">Company website or page</span></span><input id="f-site" name="site" inputmode="url"></label>
             <label for="f-pack"><span><span lang="ro">Ce te interesează</span><span lang="en">What you're interested in</span></span>
               <select id="f-pack" name="pack">
-                <option value="pachet-12">12 materiale / lună · 2.500 € cu TVA</option>
+                <option value="pachet-48">48 de materiale / lună (12 clipuri native × 4 platforme) · 2.500 € cu TVA</option>
                 <option value="test">Un material de test</option>
                 <option value="altceva">Altceva</option>
               </select>
@@ -644,6 +568,7 @@ footer .in{display:grid; gap:6px}
   function fmtN(n,l){ var s=Math.round(n).toLocaleString('en-US'); return l==='en'? s : s.replace(/,/g,'.'); }
   function fmt(v,f,l){
     if(f==='int') return fmtN(v,l);
+    if(f==='intplus') return fmtN(v,l)+'+';
     if(f==='kplus') return fmtN(Math.floor(v/1000)*1000,l)+'+';
     if(f==='mil1'){ var x=(v/1e6).toFixed(1); return l==='en'? x+'M' : x.replace('.',',')+' mil.'; }
     if(f==='milplus'){ var m=Math.floor(v/1e6); return l==='en'? m+'M+' : m+' mil.+'; }
@@ -655,7 +580,7 @@ footer .in{display:grid; gap:6px}
     document.querySelectorAll('[data-k]').forEach(function(el){ var v=STATS[el.dataset.k]; if(v==null) return; var host=el.closest('[lang]'); el.textContent=fmt(v, el.dataset.f, host && host.getAttribute('lang')==='en' ? 'en':'ro'); });
   }
   fetch('stats.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(s){
-    s.total_views=s.yt_views+s.tt_views; s.total_followers=s.yt_subs+s.tt_followers+s.ig_followers+s.fb_followers; s.total_posts=s.yt_videos+s.tt_videos+s.ig_posts;
+    s.total_views=s.yt_views+s.tt_views; s.total_followers=s.yt_subs+s.tt_followers+s.ig_followers+s.fb_followers; s.total_posts=s.yt_videos+s.tt_videos+s.ig_posts; s.total_materials=s.total_posts+500;
     STATS=s; paintStats();
   }).catch(function(){});
 
@@ -688,10 +613,6 @@ footer .in{display:grid; gap:6px}
     var wa=(CALLMEBOT_PHONE&&CALLMEBOT_KEY)? fetch('https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent(CALLMEBOT_PHONE)+'&text='+encodeURIComponent(text)+'&apikey='+encodeURIComponent(CALLMEBOT_KEY),{mode:'no-cors'}).catch(function(){}) : Promise.resolve();
     Promise.all([mail,wa]).then(function(r){ if(r[0] && r[0].ok){ showDone(d); } else { say('err','err'); } btn.disabled=false; }).catch(function(){ say('err','err'); btn.disabled=false; });
   });
-  var rail=document.getElementById('grid');
-  function step(d){ var c=rail.querySelector('.clip'); var w=c? c.getBoundingClientRect().width+18 : 300; rail.scrollBy({left:d*w*2, behavior:'smooth'}); }
-  document.getElementById('rail-prev').addEventListener('click', function(){ step(-1); });
-  document.getElementById('rail-next').addEventListener('click', function(){ step(1); });
 })();
 
 </script>
