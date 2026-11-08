@@ -602,9 +602,10 @@ textarea{min-height:120px; resize:vertical}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)){ say('mail','err'); return; }
     btn.disabled=true; say('sending');
     var text='🔔 Cerere nouă pe vipnetworking2024.com\n'+d.name+' · '+d.company+'\n'+d.email+(d.phone?' · '+d.phone:'')+(d.site?'\n'+d.site:'')+'\nPachet: '+d.pack+'\n„'+d.message+'”';
-    if(!CALLMEBOT_PHONE||!CALLMEBOT_KEY){ say('err','err'); btn.disabled=false; return; }
-    var url='https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent(CALLMEBOT_PHONE)+'&text='+encodeURIComponent(text)+'&apikey='+encodeURIComponent(CALLMEBOT_KEY);
-    fetch(url,{mode:'no-cors'}).then(function(){ say('ok','ok'); form.reset(); btn.disabled=false; }).catch(function(){ say('err','err'); btn.disabled=false; });
+    var mail=fetch('https://formsubmit.co/ajax/iuli.panciu@vipnetworking2024.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({_subject:'🔔 Cerere nouă pe vipnetworking2024.com: '+d.company, _template:'table', _replyto:d.email, Nume:d.name, Firma:d.company, Email:d.email, Telefon:d.phone||'-', Site:d.site||'-', Pachet:d.pack, Mesaj:d.message})});
+    var wa=(CALLMEBOT_PHONE&&CALLMEBOT_KEY)? fetch('https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent(CALLMEBOT_PHONE)+'&text='+encodeURIComponent(text)+'&apikey='+encodeURIComponent(CALLMEBOT_KEY),{mode:'no-cors'}).catch(function(){}) : Promise.resolve();
+    Promise.all([mail,wa]).then(function(r){ if(r[0] && r[0].ok){ say('ok','ok'); form.reset(); } else { say('err','err'); } btn.disabled=false; }).catch(function(){ say('err','err'); btn.disabled=false; });
   });
 })();
 </script>
