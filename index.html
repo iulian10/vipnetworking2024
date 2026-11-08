@@ -91,7 +91,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 
 /* numbers */
 .nums{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:40px 24px; margin-top:56px}
-.num b{display:block; font-size:clamp(2.4rem, 5vw, 3.6rem); font-weight:700; letter-spacing:-.035em; line-height:1; font-variant-numeric:tabular-nums}
+.num b{display:block; font-size:clamp(2.1rem, 4vw, 3rem); font-weight:700; letter-spacing:-.035em; line-height:1; font-variant-numeric:tabular-nums}
 .num > span{display:block; color:var(--muted); margin-top:10px; font-size:1rem}
 .platforms{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; margin-top:48px}
 .pf{background:var(--bg); border-radius:18px; padding:20px; min-width:0}
@@ -299,17 +299,17 @@ footer .in{display:grid; gap:6px}
         <div class="pf"><h3>Instagram</h3><p><span lang="ro"><span data-k="ig_followers" data-f="kplus">18.000+</span> urmăritori</span><span lang="en"><span data-k="ig_followers" data-f="kplus">18,000+</span> followers</span></p></div>
       </div>
       <div class="chart-wrap" style="text-align:left">
-        <h3 style="font-size:1.25rem"><span lang="ro">Vizualizări pe TikTok, pe an</span><span lang="en">TikTok views per year</span></h3>
-        <p class="note" style="margin:4px 0 18px"><span lang="ro">De la 0,8 milioane în 2021 la 9,8 milioane în 2025.</span><span lang="en">From 0.8 million in 2021 to 9.8 million in 2025.</span></p>
+        <h3 style="font-size:1.25rem"><span lang="ro">Vizualizări pe an, YouTube și TikTok împreună</span><span lang="en">Views per year, YouTube and TikTok combined</span></h3>
+        <p class="note" style="margin:4px 0 18px"><span lang="ro">De la 1,2 milioane în 2019 la 12,1 milioane în 2025. De zece ori mai mult.</span><span lang="en">From 1.2 million in 2019 to 12.1 million in 2025. Ten times more.</span></p>
         <div class="chart" id="chart">
           <div class="yaxis" id="yaxis" aria-hidden="true"></div>
           <div class="plot" id="plot"><div class="bands" id="bands"></div></div>
           <div class="xaxis" id="xaxis" aria-hidden="true"></div>
           <div class="tip" id="tip" hidden></div>
         </div>
-        <p class="note"><span lang="ro">* 2026: până la 7 noiembrie.</span><span lang="en">* 2026: through 7 November.</span></p>
+        <p class="note"><span lang="ro">* 2026: până la 7 noiembrie. Instagram și Facebook nu publică vizualizările pe ani, deci nu sunt incluse.</span><span lang="en">* 2026: through 7 November. Instagram and Facebook don't publish yearly views, so they are not included.</span></p>
         <details class="table-view"><summary><span lang="ro">Vezi tabelul</span><span lang="en">Show the table</span></summary>
-          <div class="tbl-wrap"><table><thead><tr><th><span lang="ro">An</span><span lang="en">Year</span></th><th><span lang="ro">Clipuri</span><span lang="en">Videos</span></th><th><span lang="ro">Vizualizări</span><span lang="en">Views</span></th></tr></thead><tbody id="tbody"></tbody></table></div>
+          <div class="tbl-wrap"><table><thead><tr><th><span lang="ro">An</span><span lang="en">Year</span></th><th>YouTube</th><th>TikTok</th><th>Total</th></tr></thead><tbody id="tbody"></tbody></table></div>
         </details>
       </div>
       <p class="updated"><span lang="ro">Cifre publice, actualizate automat în fiecare zi. Ultima actualizare: <span data-k="updated" data-f="date">8 noiembrie 2026</span>.</span><span lang="en">Public figures, updated automatically every day. Last update: <span data-k="updated" data-f="date">8 November 2026</span>.</span></p>
@@ -570,8 +570,8 @@ footer .in{display:grid; gap:6px}
   function lang(){ return root.getAttribute('data-lang')==='en' ? 'en' : 'ro'; }
 
   /* TikTok chart */
-  var DATA=[{y:'2021',v:834679,n:23},{y:'2022',v:1439865,n:11},{y:'2023',v:3986403,n:162},{y:'2024',v:6369839,n:227},{y:'2025',v:9790841,n:329},{y:'2026',v:6667253,n:213,partial:true}];
-  var MAX=10000000, TICKS=[0,2500000,5000000,7500000,10000000];
+  var DATA=[{y:'2019',v:1159900,yt:1159900,tt:0,n:42},{y:'2020',v:616975,yt:615100,tt:1875,n:25},{y:'2021',v:1457111,yt:622432,tt:834679,n:63},{y:'2022',v:2459068,yt:1019203,tt:1439865,n:75},{y:'2023',v:5575534,yt:1589131,tt:3986403,n:357},{y:'2024',v:8381486,yt:2011647,tt:6369839,n:495},{y:'2025',v:12077827,yt:2286986,tt:9790841,n:670},{y:'2026',v:8516438,yt:1849185,tt:6667253,n:541,partial:true}];
+  var MAX=12500000, TICKS=[0,2500000,5000000,7500000,10000000,12500000];
   function tick(v,l){ if(v===0) return '0'; var s=String(v/1e6); return l==='en'? s+'M' : s.replace('.',',')+' mil.'; }
   function full(v,l){ var s=v.toLocaleString('en-US'); return l==='en'? s : s.replace(/,/g,'.'); }
   function short1(v,l){ var x=(v/1e6).toFixed(1); return l==='en'? x+'M' : x.replace('.',',')+' mil.'; }
@@ -588,14 +588,14 @@ footer .in{display:grid; gap:6px}
     var l=lang();
     yaxis.querySelectorAll('span').forEach(function(s){ s.textContent=tick(+s.dataset.v,l); });
     bands.querySelectorAll('.dlabel').forEach(function(s){ s.textContent=short1(+s.dataset.v,l)+(s.dataset.p?'*':''); });
-    bands.querySelectorAll('.cband').forEach(function(b){ var d=b._d; b.setAttribute('aria-label', d.y+': '+full(d.v,l)+(l==='en'?' views, ':' vizualizări, ')+d.n+(l==='en'?' videos':' clipuri')); });
+    bands.querySelectorAll('.cband').forEach(function(b){ var d=b._d; b.setAttribute('aria-label', d.y+': '+full(d.v,l)+(l==='en'?' views (YouTube ':' vizualizări (YouTube ')+full(d.yt,l)+', TikTok '+full(d.tt,l)+')'); });
     while(tbody.firstChild) tbody.removeChild(tbody.firstChild);
-    DATA.forEach(function(d){ var tr=document.createElement('tr'); [d.y+(d.partial?'*':''), String(d.n), full(d.v,l)].forEach(function(c){ var td=document.createElement('td'); td.textContent=c; tr.appendChild(td); }); tbody.appendChild(tr); });
+    DATA.forEach(function(d){ var tr=document.createElement('tr'); [d.y+(d.partial?'*':''), full(d.yt,l), full(d.tt,l), full(d.v,l)].forEach(function(c){ var td=document.createElement('td'); td.textContent=c; tr.appendChild(td); }); tbody.appendChild(tr); });
   }
   function showTip(b){
     var d=b._d, l=lang(); while(tip.firstChild) tip.removeChild(tip.firstChild);
     var st=document.createElement('strong'); st.textContent=full(d.v,l)+(l==='en'?' views':' vizualizări');
-    var sp=document.createElement('span'); sp.textContent=d.y+(d.partial?(l==='en'?' (through 7 Nov)':' (până la 7 nov.)'):'')+' · '+d.n+(l==='en'?' videos':' clipuri');
+    var sp=document.createElement('span'); sp.textContent=d.y+(d.partial?(l==='en'?' (through 7 Nov)':' (până la 7 nov.)'):'')+' · YouTube '+full(d.yt,l)+' · TikTok '+full(d.tt,l);
     tip.appendChild(st); tip.appendChild(sp); tip.hidden=false;
     var cr=chart.getBoundingClientRect(), br=b.getBoundingClientRect(), bar=b.querySelector('.bar').getBoundingClientRect();
     var left=br.left-cr.left+br.width/2-tip.offsetWidth/2; left=Math.max(0, Math.min(left, cr.width-tip.offsetWidth));
